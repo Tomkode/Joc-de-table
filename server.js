@@ -78,12 +78,12 @@ let activi=users.length;
     console.log('listening on *:3000');
   });
 
-// const con = mysql.createConnection({
-//     host: "eu-cdbr-west-03.cleardb.net",
-//     user: "bdea786c909138",
-//     password: "2f364cba",
-//     database: "heroku_3b61f10a737bcca"
-//   });
+const con = mysql.createConnection({
+    host:"eu-cdbr-west-03.cleardb.net",
+    user:"bdea786c909138",
+    password:"2f364cba",
+    database:"heroku_3b61f10a737bcca"
+  });
 
   con.connect(function(err) {
 	if (err) throw err
