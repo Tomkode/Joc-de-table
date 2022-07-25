@@ -1,0 +1,23 @@
+body, html{
+    background-color: aqua;
+    font-family: 'Bebas Neue', cursive;
+}
+
+.inscriere{
+    background-color: #07ada0;
+    margin-left: 35%;
+    margin-top: 10px;
+    width: 30%;
+    height:40%;
+    position: absolute;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 24px;
+    padding : 5px;
+}
+input {
+    border : 2px solid aqua;
+    border-radius:4px;
+    margin-bottom : 5px;
+    color : #07ada0;
+}

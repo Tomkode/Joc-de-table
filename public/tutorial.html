@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/tutorial.css">
+    <link rel="stylesheet" href="css/game-style3.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Akronim&family=Anton&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/AR.js"></script>
+    
+    <title>Hai să jucăm!</title>
+  </head>
+  <body >
+    <a href='../../../index.html'><img src="images/back2.png" id="bac" onmouseover='AnimateRotate(360)' onmouseout="AnimateRotateo(360)"></a>
+<h1 id="title">~Tutorial~</h1>
+<div class = 'mutare'>
+    <span class = 'header'>~Mutarea pieselor</span>
+    <br>
+    <p> După ce jucătorul aruncă zarurile,acesta își poate muta piesele în funcție de ce numere a rulat
+      .Întotdeauna obiectele care pot fi apăsate de jucător vor avea cursor de tip pointer.
+      Pentru a muta o piesă,se apasă pe coloana acesteia,iar calculatorul va indica coloanele destinație
+    valide pe care ,bineînțeles,utilizatorul le va putea selecta pentru a finaliza mutarea.În cazul
+  răsgândirii sau apăsării greșite,acesta va apăsa încă odată pe
+coloana selectată ,iar mutările valide vor dispărea. </p>
+<div class = "flex-container">
+  <div class = "column c1"></div>
+  <div class = "column c2"></div>
+  <div class = "column c3"></div>
+</div>
+<p id = 'stanga'> În exemplul din dreapta jucătorul are piesele negre si a rulat<br> numerele 1 și 2.Încearcă să muți!!</p>
+<div class = 'buton' onclick = 'window.location.reload()'> Resetare</div>
+
+</div>
+<div class = 'codificare'>
+<span class = 'header doi'>~Codificarea coloanelor</span>
+<img src = 'images/tabla.jpeg'>
+<p>Este esențială înțelegerea numerotării coloanelor deoarece în modul de joc împotriva robotului
+  ,acesta afișează fiecare mutare pe care o face , codificată.
+</p>
+</div>
+<script src = "js/game-script3.js"></script>
+<script src = "js/game-logic3.js"></script>
+  </body>
+</html>

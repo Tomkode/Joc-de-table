@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Backgammon</title>
+<link rel = "stylesheet" href = "css/game-style.css">
+<link rel = "stylesheet" href = "css/zaruri.css">
+<script type="text/javascript" src="js/AR.js"></script>
+<script type="text/javascript" src="js/zar.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+
+<body>
+<a href='../../../index.html'><img src="images/back2.png" id="bac" onmouseover='AnimateRotate(360)' onmouseout="AnimateRotateo(360)"></a>
+<div class="playground">
+
+    <button id = "dice"> Dă cu zarul</button>
+    <div class = 'cover1'>
+
+    </div>
+<div class = 'cover2'>
+
+</div>
+
+<div class="first-face">
+
+<span class="dot"> </span>
+</div>
+
+<div class="second-face ">
+<span class="dot"> </span>
+<span class="dot"> </span>
+</div>
+
+<div class=" third-face">
+<span class="dot"> </span>
+<span class="dot"> </span>
+<span class="dot"> </span>
+</div>
+
+
+<div class="fourth-face">
+<div class="column2">
+    <span class="dot"></span >
+    <span class="dot"></span>
+</div>
+<div class="column2">
+      <span class="dot"></span>
+      <span class="dot"></span>
+</div>
+</div>
+
+
+<div class="fifth-face">
+<div class="column2">
+    <span class="dot"></span >
+    <span class="dot"></span>
+</div>
+<div class="column2">
+  <span class="dot"></span>
+</div>
+<div class="column2">
+      <span class="dot"></span>
+      <span class="dot"></span>
+</div>
+</div>
+
+
+<div class="sixth-face">
+<div class="column2">
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+</div>
+<div class="column2">
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+</div>
+</div>
+<div class="duplicate" >
+
+</div>
+</div>
+
+
+    <!--Flexbox container - the upper part  -->
+    <div class = "flex-container-up">
+        <div class = "column c13"></div>
+        <div class = "column c14"></div>
+        <div class = "column c15"></div>
+        <div class = "column c16"></div>
+        <div class = "column c17"></div>
+        <div class = "column c18"></div>
+        <div class = "column c69"></div> <!--mijlocul-->
+        <div class = "column c19"></div>
+        <div class = "column c20"></div>
+        <div class = "column c21"></div>
+        <div class = "column c22"></div>
+        <div class = "column c23"></div>
+        <div class = "column c24"></div>
+    </div>
+    <!-- End Flexbox container - the upper part-->
+    <!-- Flexbox container - the bottom part-->
+    <div class = "flex-container-down">
+        <div class = "column c12"></div>
+        <div class = "column c11"></div>
+        <div class = "column c10"></div>
+        <div class = "column c9"></div>
+        <div class = "column c8"></div>
+        <div class = "column c7"></div>
+        <div class = "column c-69"></div> <!--mijlocul-->
+        <div class = "column c6"></div>
+        <div class = "column c5"></div>
+        <div class = "column c4"></div>
+        <div class = "column c3"></div>
+        <div class = "column c2"></div>
+        <div class = "column c1"></div>
+    </div>
+    <!-- End Flexbox container - the bottom part-->
+    <div class = "column c666"></div>
+    <div class = "column c-666"></div>
+    <div class = "winner"></div>
+
+        <div class="hower" style="text-align:center;">
+          <h1>Ce culoare doriți?</h1>
+          <h3 id='cne'></h3>
+          <div class='container'>
+          <div class="piece2" id='u1'>
+          </div>
+          <div class="piece2" id='u2'>
+          </div>
+          <div class="piece2" id='u3'>
+          </div>
+          <div class="piece2" id='u4'>
+          </div>
+          <div class="piece2" id='u5'>
+          </div>
+          <div class="piece2" id='u6'>
+          </div>
+          </div>
+          </div>
+
+          <div class = "report">
+        <span>Raportează o problemă</span>
+        <br>
+        <a href = "mailto:thomasd810@gmail.com?subject=BUG%report&body=Hi,I%20found%20this%20bug"> Trimite un e-mail</a>
+    </div>
+            <script src = "js/coloare.js"></script>
+            <script src = "js/game-script.js"></script>
+            <script src = "js/game-logic.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,20 @@
+GET http://localhost:3000/users
+
+###
+POST http://localhost:3000/syncc
+
+###
+POST http://localhost:3000/submit-form
+Content-Type: application/json 
+
+{
+    "username":"fadoamne", "pass":"USHATA"
+}
+###
+
+POST http://localhost:3000/users-login
+Content-Type: application/json
+
+{
+    "name":"Kyle", "pass":"123"
+}

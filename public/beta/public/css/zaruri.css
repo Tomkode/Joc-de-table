@@ -1,0 +1,120 @@
+
+.playground{
+  position: absolute;
+  right:0px;
+  width: 10%;
+  text-align: center;
+}
+
+.dice {
+    padding: 4px;
+    background-color: pink;
+    width: 50px!important;
+    height: 50px!important;
+    border-radius: 10%;
+    position: relative;
+    margin: auto;
+    margin-top: 4px;
+    z-index : -18;
+}
+.dice_nd {
+    padding: 4px;
+    background-color: pink;
+    width: 50px;
+    height: 50px;
+    border-radius: 10%;
+    position: relative;
+    margin: auto;
+    margin-top: 2px;
+}
+
+.dot{
+  display: block;
+   width: 12px;
+   height: 12px;
+   border-radius: 50%;
+   background-color:white;
+   z-index : -18;
+}
+
+
+.first-face {
+display: flex;
+
+width: 0px;
+height: 0px;
+
+justify-content: center;
+align-items: center;
+}
+.second-face{
+  display: flex;
+  width: 0px;
+  height: 0px;
+  justify-content: space-between;
+}
+.second-face .dot:nth-of-type(2) {
+align-self: flex-end;
+}
+.third-face{
+    display: flex;
+    width: 0px;
+    height: 0px;
+    justify-content: space-between;
+}
+.third-face .dot:nth-of-type(2) {
+align-self: center;
+}
+.third-face .dot:nth-of-type(3) {
+align-self: flex-end;
+}
+.fourth-face {
+display: flex;
+width: 0px;
+height: 0px;
+justify-content: space-between;
+}
+ .column2 {
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+}
+.fifth-face {
+display: flex;
+width: 0px;
+height: 0px;
+justify-content: space-between;
+}
+.fifth-face .column2:nth-of-type(2){
+  justify-content: center;
+}
+.sixth-face {
+display: flex;
+width: 0px;
+height: 0px;
+justify-content: space-between;
+}
+.cover1{
+  background-color: black;
+  padding: 4px;
+  width: 50px!important;
+  height: 50px!important;
+  border-radius: 10%;
+  position: absolute;
+  right : 31%;
+  margin-top: 4px;
+  visibility : hidden;
+  z-index : -1;
+}
+.cover2{
+  background-color: black;
+  padding: 4px;
+  width: 50px!important;
+  height: 50px!important;
+  border-radius: 10%;
+  position: absolute;
+  right : 31%;
+  margin-top: 66px;
+  visibility : hidden;
+  z-index : -1;
+}
