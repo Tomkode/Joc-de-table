@@ -79,9 +79,9 @@ let activi=users.length;
   });
 
 const con = mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    password: "",
+    host: "eu-cdbr-west-03.cleardb.net",
+    user: "bdea786c909138",
+    password: "2f364cba",
     database: "users_table"
   });
 
