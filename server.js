@@ -21,8 +21,8 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, "public")));
 
 
-app.get('/u', (req, res) => {
-    res.sendFile(__dirname + '/public/ger.html');
+app.get('/', (req, res) => {
+    res.sendFile(__dirname + '/index.html');
 });
 
 const users= [  ];
