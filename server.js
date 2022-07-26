@@ -7,7 +7,7 @@ const path = require('path');
 const mysql = require('mysql');
 
 let eA=false, eN=false;
-let rounde=0;
+let rounde=1;
 
 let blacks=[], whites=[];
 
@@ -21,8 +21,8 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, "public")));
 
 
-app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/index.html');
+app.get('/u', (req, res) => {
+    res.sendFile(__dirname + '/public/ger.html');
 });
 
 const users= [  ];
@@ -48,6 +48,7 @@ let activi=users.length;
     socket.on('culoarea', (clr,cne)=>{
         users[cne-1].culoare=clr;
         console.log(users);
+        socket.broadcast.emit('astanu',clr);
         if(cne==1)
         eA=true;
         if(cne==2)
@@ -56,14 +57,17 @@ let activi=users.length;
         {
             console.log('start');
             io.to('room1').emit('START', users[0].culoare, users[1].culoare);
-        }
+            io.to('room1').emit('runde',rounde);
+          }
     });
   socket.on('zaruri',(z1,z2)=>{
     socket.broadcast.emit('zaruri',z1,z2);
     rounde++;
     io.to('room1').emit('runde',rounde);
   });
-
+socket.on('semarita',(x)=>{
+  io.to('room1').emit('runde',rounde);
+});
   socket.on('mutare',(c1,d,c2)=>{
     socket.broadcast.emit('mutare',c1,d,c2);
   });
@@ -71,24 +75,25 @@ let activi=users.length;
   socket.on('victori', (w1,b1,ew,eb)=>{
     socket.broadcast.emit('victori',w1,b1,ew,eb);
   })
+  socket.on('gara',()=>socket.broadcast.emit('gara'));
 });
 
   
-  server.listen((process.env.PORT || 3000), () => {
+  server.listen(3000 || process.env.PORT, () => {
     console.log('listening on *:3000');
   });
 
 const con = mysql.createConnection({
-    host:"eu-cdbr-west-03.cleardb.net",
-    user:"bdea786c909138",
-    password:"2f364cba",
-    database:"heroku_3b61f10a737bcca"
+    host: "localhost",
+    user: "root",
+    password: "",
+    database: "users_table"
   });
 
   con.connect(function(err) {
-	if (err) throw err
-	
-});
+    if (err) throw err;
+    console.log("Connected!");
+  });
 
 
 
@@ -117,29 +122,32 @@ app.post('/submit-form',async (req,res)=>{
 app.post('/users-login', async (req,res)=>{
     //const user = users.find(user => user.name === req.body.name);    
         con.query("SELECT * FROM users WHERE username = '"+req.body.username+"' ", function (err, result) {
-          if (err) throw err;
+         // if (err) console.log('sami');
       const user=Object.values(JSON.parse(JSON.stringify(result)));
-     
-     if(user == null)
-        res.status(500).send('nue');
-
-    try{
+     //console.log(user);
+     if(user == ""){
+      res.sendFile(path.join(__dirname, 'public/neparerau4.html'));
+      //res.status(404).send('nue');
+     }
+        else
+      try{
 
         (async () => {
             const result1 = await bcrypt.compare(req.body.pass, user[0].pass);
             if(result1)
         {
-            res.sendFile(path.join(__dirname, 'public/ger.html'));
+            
             activi++; 
             users.push({id:activi,useru:req.body.username,culoare: 'aqua'});
-        }
+            res.sendFile(path.join(__dirname, 'public/ger.html'));
+          }
             else
-            res.sendFile(path.join(__dirname, 'nuevoie.png'));
+            res.sendFile(path.join(__dirname, 'public/neparerau3.html'));
  
         })();
     }
-    catch{
-        res.status(506).send('asdas');
+      catch{
+        res.status(404).send('asdas');
     }
 });
 });

@@ -1,11 +1,12 @@
 const socket = io();
 let cn_e;
+let lzq=false;
 socket.on('mesaj', (mesaj,nume,catiis)=>{
     console.log(mesaj,nume,"sunt "+catiis);
     if(catiis>2)
     window.location="/neparerau.html";
-    let who= document.querySelector('#cne');
-    who.innerHTML=nume;    
+    //let who= document.querySelector('#cne');
+   // who.innerHTML=nume;    
     cn_e=catiis;
     if(cn_e==1)
         player=1;
@@ -64,6 +65,42 @@ for(var i=0;i<piese.length;i++)
   $(".hower2").show();
 //  socket.emit('culoare',1, BLACKCOLOR);
 }
+
+socket.on('astanu',(x)=>{
+if(x==cl1)
+{
+    b1.removeEventListener('click',click2);
+    b1.removeEventListener('click',click1);
+}
+
+if(x==cl2)
+{
+    b2.removeEventListener('click',click2);
+    b2.removeEventListener('click',click1);
+}
+if(x==cl3)
+{
+    b3.removeEventListener('click',click2);
+    b3.removeEventListener('click',click1);
+}
+if(x==cl4)
+{
+    b4.removeEventListener('click',click2);
+    b4.removeEventListener('click',click1);
+}
+if(x==cl5)
+{
+    b5.removeEventListener('click',click2);
+    b5.removeEventListener('click',click1);
+}
+if(x==cl6)
+{
+    b6.removeEventListener('click',click2);
+    b6.removeEventListener('click',click1);
+}
+});
+
+
 function click1(evt){
   var clr=evt.currentTarget.colour;
   socket.emit('culoarea', clr, cn_e);
@@ -112,7 +149,11 @@ socket.on('START',(c1,c2)=>{
   eatenwhite=false;
   BLACKCOLOR=c2;
   startPieces();
+  if(player==0)
+    $("#dice").hide();
 });
+
+$("#dice").hide();
 
 socket.on('STOP', ()=>{
   window.location="/neparerau2.html";
@@ -145,6 +186,7 @@ buton.addEventListener('click',roll);
 buton.addEventListener('click',start);
 
 socket.on('zaruri', (z1,z2)=>{
+  resetcovers();
   zaruri(z1,z2);
 })
 
@@ -189,6 +231,8 @@ function move(evt) // functia de mutare cand dai click pe highlighted column
                     zar02.style.visibility = 'visible';
                 }
 
+                if(die1==0 && die2==0)
+                lzq=true;   
                 //sterg event listenerurile
     if(col1 != null) {
         if(columnpieces(col1) == 0 || Math.abs(c1) == 666)
@@ -404,7 +448,9 @@ function move2(columnn, die, column) // functia de mutare cand dai click pe high
                     zar02.style.visibility = 'visible';
                 }
 
-                //sterg event listenerurile
+if(die1==0 && die2==0)
+lzq=true;       
+//sterg event listenerurile
     if(col1 != null) {
         if(columnpieces(col1) == 0 || Math.abs(c1) == 666)
         Cursor(col1,0);
@@ -553,10 +599,26 @@ if(whitewinner || blackwinner)
     }
     console.log('Negruzzi : ' , blacks , '\n');
     console.log('Albuzzi : ' , whites , '\n');
+
 }
 
 
+$('#paseaza').hide();
 
 socket.on('mutare',(c1,d,c2)=>{
 move2(c1,d,c2);
 });
+
+
+
+buton.addEventListener('click', ()=>{
+    $("#dice").hide();
+    $('#paseaza').show();
+    $("#paseaza").click(()=>{
+        socket.emit('gara');
+        $('#paseaza').hide();
+            });
+});
+
+
+socket.on('gara',()=>$("#dice").show());

@@ -4,7 +4,6 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "npm start",
     "devStart": "nodemon server.js"
   },
   "keywords": ["example", "heroku"],

@@ -8,22 +8,28 @@
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="css/vio.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>Logheaza-te</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/AR.js"></script>
+  
 </head>
 <body>
+    <a href='../../../index.html'><img src="images/back2.png" id="bac" onmouseover='AnimateRotate(360)' onmouseout="AnimateRotateo(360)"></a>
     <div class="inscriere">
         <form method="post" action="users-login">
             <b><label for="username">~Username~</label></b>
             <br>
-            <input type="text"  name="username" placeholder = 'Username-ul tău'/>
+            <input type="text"  name="username" placeholder = 'Username-ul tău' id = 'user'/>
             <br>
             <b><label for="pass">~Parola~</label></b>
             <br>
-            <input type="password" name="pass" placeholder = 'Parola ta'/>    
+            <input type="password" name="pass" placeholder = 'Parola ta' id = 'pw'/>    
             <br>            
-            <input type="submit" >
+            <input type="submit" id = 'submitID' >
         </form>
         Login
     </div>
+    <script src = 'js/coscos.js'></script>
 </body>
 </html>

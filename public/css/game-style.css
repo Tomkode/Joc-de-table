@@ -149,6 +149,16 @@ div.flex-container-up{
         margin-right : 0;
         margin-left : auto;
     }
+    #paseaza{
+        border : 4px solid black;
+        border-radius : 25px;
+        background-color : red;
+        color : black;
+        text-align : center;
+        position : relative;
+        margin-right : 0;
+        margin-left : auto;
+    }
     #dice-values{
         color : black;
         position : absolute;
