@@ -2,7 +2,7 @@ GET http://localhost:3000/users
 
 ###
 POST http://localhost:3000/syncc
-
+n
 ###
 POST http://localhost:3000/submit-form
 Content-Type: application/json 
@@ -16,5 +16,5 @@ POST http://localhost:3000/users-login
 Content-Type: application/json
 
 {
-    "name":"Kyle", "pass":"123"
+    "username":"gik", "pass":"123"
 }

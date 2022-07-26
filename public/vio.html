@@ -3,21 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="css/vio.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Creează cont</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/AR.js"></script>
+    <title>Logheaza-te</title>
 </head>
 <body>
-    <div class="inscriere" style="text-align: center;">
+    <a href='../../../index.html'><img src="images/back2.png" id="bac" onmouseover='AnimateRotate(360)' onmouseout="AnimateRotateo(360)"></a>
+    <div class="inscriere">
         <form method="post" action="submit-form">
-    <b><label for="name">Username</label></b>
-        
-            <input type="text"  name="username"/>
-    <b><label for="pass">Parola</label></b>
-            <input type="password" name="pass"/>                
-    <input onclick="window.location.href = 'coscos.html';"  type="submit" >
-</form>
-Inregistrare
+            <b><label for="username">~Username~</label></b>
+            <br>
+            <input type="text"  name="username" placeholder = 'Username-ul tău' id = 'user' autocomplete="off"/>
+            <br>
+            <b><label for="pass">~Parola~</label></b>
+            <br>
+            <input type="password" name="pass" placeholder = 'Parola ta' id = 'pw'/>    
+            <br>            
+            <input type="submit" id = 'submitID' onclick="window.location.hred='coscos.html'" >
+        </form>
+        Înregistrare
     </div>
+    <script src = 'js/coscos.js'></script>
 </body>
 </html>
