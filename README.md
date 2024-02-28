@@ -14,4 +14,6 @@
 
 * designing a minimalistic structure and browser interface for the game (using HMTL and CSS) 
 * building all the game logic from scratch (with JavaScript) 
-* developing a simple random-based AI to play against the human 
+* developing a simple random-based AI to play against the human
+
+  Check out the documentation for this project: [Documentation](Documentation.pdf)
